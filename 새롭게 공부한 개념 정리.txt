@@ -1,0 +1,32 @@
+# 2_1000
+- map(function, iterable)
+iterable에 여러개의 리스트가 있을텐데, 거기에 funciton 을 각각 적용 가능
+내부적으로 C로 구현되어 있으므로 파이썬 반복문보다 빠름
+제약 사항 : 입력된 모든 이터레이터 객체의 길이가 같아야 함
+
+- sep="??"
+print 함수의 sep 매개변수를 사용하면 출력할 값들 사이의 구분자를 지정할 수 있음
+ex) 
+>>> print("2025", "08", "17", sep="-")
+2025-08-17
+
+- print 방법론
+1. 문자열 띄어쓰기는 쉼표로 한다.
+ex)
+>>> print("life", "is", "too short")
+life is too short
+2. 한줄에 계속 이어서 출력하려면 매개변수 end를 사용한다.
+(일반적인 프린트는 end='/n' 이 생략되어 있다고 봐도 됨)
+ex)
+>>> for i in range(10):
+...     print(i, end=' ')
+0 1 2 3 4 5 6 7 8 9
+3. f 문자열 포맷 이용 가능 : print(f"{abc}")
+ex) 
+>>> x = 3.141592
+>>> print(f"x : {x:.4f}")
+x : 3.1416
+
+- split()
+1. split() : 띄어쓰기, 엔터를 구분하여 split
+2. split('구분자') : 구분자를 기준으로 split
