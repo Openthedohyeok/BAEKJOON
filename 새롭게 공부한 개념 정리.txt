@@ -1,4 +1,5 @@
-# 2_1000
+# 1000
+
 - map(function, iterable)
 iterable에 여러개의 리스트가 있을텐데, 거기에 funciton 을 각각 적용 가능
 내부적으로 C로 구현되어 있으므로 파이썬 반복문보다 빠름
@@ -30,3 +31,66 @@ x : 3.1416
 - split()
 1. split() : 띄어쓰기, 엔터를 구분하여 split
 2. split('구분자') : 구분자를 기준으로 split
+
+
+# 15552
+
+- readline()
+이제는 여러개의 input 을 받아올 때 그냥 input() 으로 받아와서는 시간 초과가 날 수 있다.
+그래서 readline 을 사용하기로 한다. 사용을 위해서는 sys 를 import 한다.
+단, 이때는 맨 끝의 개행문자까지 같이 입력받기 때문에, 
+문자열을 저장할 경우에는 꼭 .rstrip()을 추가해주도록 한다.
+ex)
+import sys
+char_a = sys.stdin.readline().rstrip()
+a, b, c = map(int, sys.stdin.readline().split())
+
+
+# 10951
+
+- try, except
+코드는 무조건 끝나야 함. 아니면 런타임 오류가 나게 되어 있음.
+따라서, input 을 계속 받다가 안들어오면 끝내는 코드는 아래와 같이 하면 됨.
+ex)
+while True:
+    try:
+        a = input()
+    except:
+        break
+
+
+# 번외
+
+- 문자열 정렬
+정렬은 다음과 같이 할 수 있다.
+>>> f'{"hi":<10}'  # 왼쪽 정렬
+'hi        '
+>>> f'{"hi":>10}'  # 오른쪽 정렬
+'        hi'
+>>> f'{"hi":^10}'  # 가운데 정렬
+'    hi    '
+공백 채우기는 다음과 같이 할 수 있다.
+>>> f'{"hi":=^10}'  # 가운데 정렬하고 '=' 문자로 공백 채우기
+'====hi===='
+>>> f'{"hi":!<10}'  # 왼쪽 정렬하고 '!' 문자로 공백 채우기
+'hi!!!!!!!!'
+
+
+# 10807
+
+- 문자열 관련 함수들
+1) a.count('b') : 문자열 a에서 b의 갯수를 리턴
+2) a.find('b') : 문자열 a에서 b가 처음으로 나오는 index를 리턴, 없을 경우 -1 리턴
+3) a.index('b') : find 와 동일하나 b가 없는 경우에 Error
+4) ",".join('abcd') : abcd 사이에 , 를 삽입 -> a,b,c,d
+5) a.upper() : 문자열 a를 모두 대문자로 변경
+6) a.lower() : 문자열 a를 모두 소문자로 변경
+7) a.lstrip() : 문자열 a의 왼쪽 공백 지워줌
+8) a.rstrip() : 문자열 a의 오른쪽 공백 지워줌
+9) a.strip() : 문자열 a의 양쪽 공백 지워줌
+10) a.replace("abc", "abcd") : 문자열 a에 포함된 abc를 abcd 로 변경
+11) a.split() : 문자열 나누기
+12) a.isalpha() : 문자열이 알파벳으로만 구성되어 있는지 확인 후 True/False 리턴
+13) a.isdigit() : 문자열이 숫자로만 구성되어 있는지 확인 후 True/False 리턴
+14) a.startswith("bcd") : 문자열 a가 bcd로 시작하는지 검사 후 True/False 리턴
+15) a.endswith("bcd") : 문자열 a가 bcd로 끝나는지 검사 후 True/False 리턴
