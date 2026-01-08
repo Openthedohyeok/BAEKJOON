@@ -94,3 +94,67 @@ while True:
 13) a.isdigit() : 문자열이 숫자로만 구성되어 있는지 확인 후 True/False 리턴
 14) a.startswith("bcd") : 문자열 a가 bcd로 시작하는지 검사 후 True/False 리턴
 15) a.endswith("bcd") : 문자열 a가 bcd로 끝나는지 검사 후 True/False 리턴
+
+
+# 10813
+
+temp = basket[i-1]
+basket[i-1] = basket[j-1]
+basket[j-1] = temp
+위의 과정을 아래와 같이 한줄로 적을 수 있다.
+basket[i-1], basket[j-1] = basket[j-1], basket[i-1]
+
+- 리스트 언패킹 : *
+basket = [1, 2, 3, 4, 5] 이라는 리스트가 있을 때,
+앞에 '*'을 붙여서 print 하면 리스트 안의 요소들을 각각 꺼내서 전달함
+ex)
+>> print(*basket)
+>> 1 2 3 4 5
+응용으로 print(*basket, sep=', ') 로 하면 1, 2, 3, 4, 5 의 결과를 얻을 수도 있음
+
+
+
+# 5597
+
+- set : 수학의 집합 개념을 코드로 구현한 자료형
+* 2대 핵심 특징
+1) 중복을 허용하지 않는다. (똑같은 값을 여러번 넣어도 결국 하나만 남음)
+2) 순서가 없다. (인덱싱으로 값을 꺼낼 수 없다)
+* my_set = set(my_list) 형태로 set 만들 수 있음.
+이후, 집합 연산하듯이 하면 됨.
+1) 교집합 (sample_set & my_set) : 둘 다 있는 것
+2) 합집합 (sample_set | my_set) : 합친 것
+3) 차집합 (sample_set - my_set) : sample_set 에만 있는 것
+* 데이터 추가 및 삭제
+1) my_set.add(4) : my_set 에 값 4를 추가
+2) my_set.update([5,6]) : my_set 에 리스트를 넣어 한꺼번에 추가
+3) my_set.remove(1) : my_set 에서 값 1을 삭제
+* 꿀팁
+1) 중복 제거 필요할 때 list(set(my_list)) 로 한번에 가능
+2) if x in my_list 라고 하면 연산 느린데, if x in my_set 으로 하면 개빠름
+3) sorted(my_set) 을 사용하면 my_set 을 정렬하고 리스트로 바꿔준다!! 개꿀
+- list(range(a,b))로 a에서 b-1 로 구성된 list 만들 수 있다. set도 동일
+
+
+# 10811
+
+- list 관련 함수
+1) a.append(b) : list a에 b추가
+2) a.sort() : list a 를 오름차순 정렬
+3) a.reverse() : list a 를 역순으로 뒤집음 
+4) a.index(x) : list a 에서 x의 위치를 반환 (존재 안하면 Error)
+5) a.insert(x, y) : list a 의 x 위치에 y를 삽입
+6) a.remove(x) : list a 에서 첫번째로 나오는 x를 삭제
+7) a.pop() : list a의 맨 마지막 요소를 반환하고 그 요소를 삭제
+8) a.count(x) : list a 안에 x가 몇개 들어있는지 반환
+9) a.extend([b, c]) : list a 에 list [b, c]를 이어붙임
+
+- 뒤에서 부터 거꾸로 읽는 팁 : [::-1]
+ex) a[0:4][::-1] -> list a의 0~3번 인덱스 값을 뒤에서 부터 한칸씩 슬라이싱
+
+
+# 1546
+- 내장 함수 정리 필요
+https://wikidocs.net/32
+
+**** 다음 시간 복습 필요한 문항 : 10810, 10813, 5597, 10811, 1546
