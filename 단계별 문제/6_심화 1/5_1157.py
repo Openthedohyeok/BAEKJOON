@@ -40,3 +40,21 @@ else:
 #     print(alpha[check.index(max(check))])
 # else:
 #     print('?')
+
+
+############# 1/14 풀이 ###################
+
+# import sys
+
+# word = sys.stdin.readline().rstrip().upper()
+# word_set = list(set(word))
+
+# cnt = []
+
+# for s in word_set:
+#     cnt.append(word.count(s))
+
+# if cnt.count(max(cnt)) > 1:
+#     print('?')
+# else:
+#     print(word_set[cnt.index(max(cnt))])

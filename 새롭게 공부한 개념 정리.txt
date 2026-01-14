@@ -174,8 +174,29 @@ ex) def positive(x):
 10) sorted(iterable) : iterable 데이터를 정렬한 후 리스트로 반환
 
 
+# 1316
+- word.find 로 정렬하면 정렬결과가 원래와 같도록 같은 문자끼리 모을 수 있음
+ex) sorted(word, key=word.find)
+>> word = 'aabsddeadas'
+>> print(sorted(word))
+['a', 'a', 'a', 'a', 'b', 'd', 'd', 'd', 'e', 's', 's']
+>> print(sorted(word, key=word.find))
+['a', 'a', 'a', 'a', 'b', 's', 's', 'd', 'd', 'd', 'e']
+
+
+# 25206
+- 딕셔너리 : a = {'x' : 3, 'y' : 5} 등으로 구성해서 딕셔너리 정의 가능
+해당 내용을 불러올때는 a('x') 와 같은식으로 불러올 수 있다.
+** 대괄호가 아닌 중괄호를 쓰고 있음에 유의!!
+ex) xy_dic = {
+    'x' : 1, 'y' : 2,
+    3 : 'z'
+}
+>> print(xy_dic['x'])
+1
+>> print(xy_dic[3])
+z
 
 
 
-
-**** 다음 시간 복습 필요한 문항 : 심화 1 4번부터 다 복습해라.
+**** 다음 시간 복습 필요한 문항 : 심화 1316번부터 필히 복습, 2차원 배열의 2566번도 꼭 다시 보기
